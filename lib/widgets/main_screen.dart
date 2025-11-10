@@ -3,6 +3,7 @@ import '../screens/home_screen.dart';
 import '../screens/search_screen.dart';
 import '../screens/favorites_screen.dart';
 import '../screens/profile_screen.dart';
+import '../services/auth_service.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -33,6 +34,15 @@ class _MainScreenState extends State<MainScreen> {
       appBar: AppBar(
         title: const Text('My App'),
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.logout),
+            onPressed: () async {
+              await AuthService().signOut();
+            },
+            tooltip: 'Sign Out',
+          ),
+        ],
       ),
       body: _screens[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
