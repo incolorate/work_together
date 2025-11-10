@@ -22,7 +22,7 @@ class AuthWrapper extends StatelessWidget {
 
         if (snapshot.hasData) {
           // User is signed in
-          return const MainScreen();
+          return MainScreen(user: snapshot.data!);
         }
 
         // User is not signed in

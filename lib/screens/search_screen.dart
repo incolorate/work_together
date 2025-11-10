@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class SearchScreen extends StatelessWidget {
-  const SearchScreen({super.key});
+  final User user;
+
+  const SearchScreen({super.key, required this.user});
 
   @override
   Widget build(BuildContext context) {

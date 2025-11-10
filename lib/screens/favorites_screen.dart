@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class FavoritesScreen extends StatelessWidget {
-  const FavoritesScreen({super.key});
+  final User user;
+
+  const FavoritesScreen({super.key, required this.user});
 
   @override
   Widget build(BuildContext context) {
